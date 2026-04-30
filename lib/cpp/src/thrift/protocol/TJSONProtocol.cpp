@@ -528,7 +528,7 @@ uint32_t TJSONProtocol::writeJSONDouble(double num) {
   bool special = false;
   switch (boost::math::fpclassify(num)) {
   case FP_INFINITE:
-    if (boost::math::signbit(num)) {
+    if (std::signbit(num)) {
       val = kThriftNegativeInfinity;
     } else {
       val = kThriftInfinity;
