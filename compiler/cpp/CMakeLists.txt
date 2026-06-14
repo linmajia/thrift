@@ -122,8 +122,8 @@ THRIFT_ADD_COMPILER(d       "Enable compiler for D" ON)
 THRIFT_ADD_COMPILER(lua     "Enable compiler for Lua" ON)
 THRIFT_ADD_COMPILER(rdsn    "Enable compiler for rDSN" ON)
 
-# rDSN generator uses c++11 features so we add CXX_FLAGS here
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+# rDSN generator uses c++14 features so we add CXX_FLAGS here
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 # Thrift is looking for include files in the src directory
 # we also add the current binary directory for generated files
@@ -134,4 +134,4 @@ set_target_properties(thrift-compiler PROPERTIES OUTPUT_NAME thrift)
 
 target_link_libraries(thrift-compiler libparse)
 
-# install(TARGETS thrift-compiler DESTINATION "${BIN_INSTALL_DIR}")
+install(TARGETS thrift-compiler DESTINATION "${BIN_INSTALL_DIR}")
