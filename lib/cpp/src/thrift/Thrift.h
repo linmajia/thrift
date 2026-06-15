@@ -42,7 +42,12 @@
 #include <exception>
 #include <typeinfo>
 
+#include <boost/version.hpp>
+#if BOOST_VERSION >= 105600
+#include <boost/core/enable_if.hpp>
+#else
 #include <boost/utility/enable_if.hpp>
+#endif
 #include <boost/type_traits/is_convertible.hpp>
 
 #include <thrift/TLogging.h>
