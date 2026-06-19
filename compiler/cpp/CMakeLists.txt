@@ -123,7 +123,7 @@ THRIFT_ADD_COMPILER(lua     "Enable compiler for Lua" ON)
 THRIFT_ADD_COMPILER(rdsn    "Enable compiler for rDSN" ON)
 
 # rDSN generator uses c++14 features so we add CXX_FLAGS here
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 # Thrift is looking for include files in the src directory
 # we also add the current binary directory for generated files
